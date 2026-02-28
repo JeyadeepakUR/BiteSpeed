@@ -34,7 +34,7 @@ function App() {
       if (email.trim()) payload.email = email.trim();
       if (phoneNumber.trim()) payload.phoneNumber = phoneNumber.trim();
 
-      const { data } = await axios.post<ContactResponse>('https://bitespeed-gw7e.onrender.com', payload);
+      const { data } = await axios.post<ContactResponse>('https://bitespeed-gw7e.onrender.com/api/identify', payload);
       setResult(data);
     } catch (err: any) {
       setError(err.response?.data?.error || 'Failed to connect to the Identity service');
